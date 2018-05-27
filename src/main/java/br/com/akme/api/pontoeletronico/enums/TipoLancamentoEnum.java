@@ -1,6 +1,6 @@
 package br.com.akme.api.pontoeletronico.enums;
 
-public enum WorkTimeOccurrenceTypeEnum {
+public enum TipoLancamentoEnum {
     START_WORK,
     END_WORK,
     START_LAUNCH,

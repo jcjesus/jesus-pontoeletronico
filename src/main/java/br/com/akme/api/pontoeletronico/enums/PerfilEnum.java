@@ -1,6 +1,6 @@
 package br.com.akme.api.pontoeletronico.enums;
 
-public enum ProfileEnum {
+public enum PerfilEnum {
     ROLE_ADMIN,
     ROLE_USER
 }

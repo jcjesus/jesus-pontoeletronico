@@ -1,4 +1,4 @@
 package br.com.akme.api.pontoeletronico.entities;
 
-public class Employee {
+public class Lancamento {
 }
