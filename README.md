@@ -1,3 +1,8 @@
+[![CircleCI](https://circleci.com/bb/jcjesus/pontoeletronico.svg?style=svg)](https://circleci.com/bb/jcjesus/pontoeletronico)
+
+##Sistema de Ponto Eletrônico
+API para o sistema de ponto eletrônico, parte do estudo de um curso.
+
 **Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
 
 When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
