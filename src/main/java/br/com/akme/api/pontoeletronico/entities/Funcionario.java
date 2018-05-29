@@ -30,16 +30,46 @@ public class Funcionario {
     private String cpf;
     @Column(name = "valor_hora", nullable = true)
     private BigDecimal valorHora;
+    @Column(name = "qtd_horas_trabalho_dia", nullable = true)
     private Float qtdHorasTrabalhoDia;
+    @Column(name = "qtd_horas_almoco", nullable = true)
     private Float qtdHorasAlmoco;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "perfil", nullable = false)
     private PerfilEnum perfil;
+    @Column(name = "data_criacao", nullable = false)
     private Date dataCriacao;
+    @Column(name = "data_atualizacao", nullable = false)
     private Date dataAtualizacao;
+    @ManyToOne(fetch = FetchType.EAGER)
     private Empresa empresa;
+    @OneToMany(mappedBy = "funcionario", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Lancamento> lancamentos;
 
     @Transient
     public Optional<BigDecimal> getValorHoraOptional(){
         return Optional.ofNullable(valorHora);
     }
+
+    @Transient
+    public Optional<Float> getQtdHorasTrabalhoDiaOptional(){
+        return Optional.ofNullable(qtdHorasTrabalhoDia);
+    }
+    @Transient
+    public Optional<Float> getQtdHorasAlmocoOptional(){
+        return Optional.ofNullable(qtdHorasAlmoco);
+    }
+
+    @PreUpdate
+    public void preUpdate() {
+        dataAtualizacao = new Date();
+    }
+
+    @PrePersist
+    public void prePersist() {
+        final Date atual = new Date();
+        dataCriacao = atual;
+        dataAtualizacao = atual;
+    }
+
 }
